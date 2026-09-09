@@ -1,0 +1,9 @@
+-- CREATE DATABASE IF NOT EXISTS surfera;
+
+-- CREATE TABLE IF NOT EXISTS users (
+--    user_id UUID DEFAULT uuidv7() PRIMARY KEY,
+--    name VARCHAR(150) NOT NULL,
+--    email VARCHAR(200) NOT NULL UNIQUE,
+--    password VARCHAR(255) NOT NULL,
+--    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+-- );
