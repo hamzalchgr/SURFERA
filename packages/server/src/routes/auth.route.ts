@@ -77,7 +77,7 @@ router.post('/signin', async (req: Request, res: Response) => {
    try {
       const userResult = await pool.query(
          `
-            SELECT user_id, name, email, password FROM users WHERE email = $1
+            SELECT user_id, name, email, password, created_at FROM users WHERE email = $1
          `,
          [email]
       );
@@ -134,6 +134,8 @@ router.post('/logout', (req: Request, res: Response) => {
 // ME
 router.get('/account', protect, (req: Request, res: Response) => {
    const user_id = req.user?.user_id;
-})
+
+   return res.status(200).json({ user_id });
+});
 
 export default router;

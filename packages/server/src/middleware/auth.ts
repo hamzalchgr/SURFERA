@@ -1,12 +1,10 @@
 import type { NextFunction, Request, Response } from 'express';
 import jwt, { type JwtPayload } from 'jsonwebtoken';
 import { JWT_SECRET_KEY } from '../utils/token';
-import { success } from 'zod';
-import { error } from 'node:console';
 
 export const protect = (req: Request, res: Response, next: NextFunction) => {
    try {
-      const accessToken = req.cookies.token;
+      const accessToken = req.cookies?.token;
 
       if (!accessToken) {
          return res.status(401).json({
